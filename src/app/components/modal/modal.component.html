@@ -1,8 +1,8 @@
 <div class="modal-overlay" *ngIf="isOpen" (click)="onClose()">
-    <div class="modal" (click)="$event.stopPropagation()">
+    <div class="modal" (click)="$event.stopPropagation()" role="dialog">
         <button class="close-button" aria-label="Close" #firstFocusable (click)="onClose()" #modalContent>×</button>
-      <h2>Modal Title</h2>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="modal-form">
+      <h2 id="title-id">Modal Title</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="modal-form" aria-labelledby="title-id">
         <div class="form-group">
           <label for="name">Name</label>
           <input id="name" formControlName="name" required/>
